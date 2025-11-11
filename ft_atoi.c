@@ -1,37 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/11 15:12:38 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/11 18:20:50 by niverdie         ###   ########.fr       */
+/*   Created: 2025/11/11 17:34:43 by niverdie          #+#    #+#             */
+/*   Updated: 2025/11/11 18:09:58 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_atoi(const char *nptr)
 {
-	size_t	i;
+	int	i;
+	int	nb;
+	int	sign;
 
+	sign = 1;
 	i = 0;
-	while (i < n)
+	nb = 0;
+	while ((nptr[i] >= 9 && nptr[i] <= 13) || (nptr[i] == 32))
+		i++;
+	if (nptr[i] == '-')
+		sign = -sign;
+	if (nptr[i] == '+' || nptr[i] == '-')
+		i++;
+	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		if (((unsigned const char *)s1)[i] != ((unsigned const char *)s2)[i])
-			return (((unsigned const char *)s1)[i]
-				- ((unsigned const char *)s2)[i]);
+		nb = nb * 10 + (nptr[i] - 48);
 		i++;
 	}
-	return (0);
+	return (nb * sign);
 }
 /*
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
 
-int	main(int ac, char **av)
+int	main(int ac , char **av)
 {
-    printf("ft : %d\n", ft_memcmp(av[1], av[2], atoi(av[3])));
-    printf("og : %d", memcmp(av[1], av[2], atoi(av[3])));
+	printf("og : %d\n", atoi(av[1]));
+	printf("ft : %d", ft_atoi(av[1]));
 }*/

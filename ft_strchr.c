@@ -25,12 +25,14 @@ char	*ft_strchr(const char *s, int c)
 			return ((unsigned char *)(&s[i]));
 		i++;
 	}
-	return ((unsigned char*)(&s[i]));
+	return ((unsigned char *)(&s[i]));
 }
 
 int	main(void)
 {
-	char s[25] = "salut l'equipe";
+	char	s[25];
+
+	s[25] = "salut l'equipe";
 	printf("%s", ft_strchr(s, 'l'));
-	printf("%s", strchr(s, 'l')); 
+	printf("%s", strchr(s, 'l'));
 }

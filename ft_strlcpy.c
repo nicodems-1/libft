@@ -11,10 +11,11 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
+
 //#include <stdio.h>
 
 size_t	ft_strlen(const char *s);
-size_t  ft_strlcpy(char *dst, const char *src, size_t size);
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 
 size_t	ft_strlen(const char *s)
 {
@@ -26,22 +27,22 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-size_t  ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-    size_t i;
-    size_t l;
+	size_t	i;
+	size_t	l;
 
-    l = ft_strlen(src);
-    i = 0;
-    while(src[i] && i < size)
-    {
-        dst[i] = src[i];
-        i++;
-    }
-    return(l);
+	l = ft_strlen(src);
+	i = 0;
+	while (src[i] && i < size)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	return (l);
 }
 /*
-int    main(void)
+int	main(void)
 {
     char src[6]= "salut";
     char dest[0];
