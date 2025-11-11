@@ -6,7 +6,7 @@
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 10:38:46 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/11 13:32:05 by niverdie         ###   ########.fr       */
+/*   Updated: 2025/11/11 15:10:59 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void *ft_memchr(const void *s, int c, size_t n)
 	}
 	return (void *)NULL;
 }
-
+/*
 #include <stdio.h>
 #include <string.h>
 int main(void)
@@ -36,4 +36,4 @@ int main(void)
     char s[50] = "salut le boss ca va";
     printf("ft : %p\n", ft_memchr(s, 's', 20));
     printf("og : %p", memchr(s, 's', 20));
-}
+}*/
