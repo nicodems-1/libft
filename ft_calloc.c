@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/11 10:38:46 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/12 16:56:07 by niverdie         ###   ########.fr       */
+/*   Created: 2025/11/12 17:04:26 by niverdie          #+#    #+#             */
+/*   Updated: 2025/11/12 17:33:53 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
-char	*ft_strrchr(const char *s, int c);
-
-char	*ft_strrchr(const char *s, int c)
+void	*ft_bzero(void *s, size_t n)
 {
-	int	i;
+	size_t			i;
+	unsigned char	*sbis;
 
+	sbis = (unsigned char *)s;
 	i = 0;
-	while (s[i])
-		i++;
-	while (i != 0)
+	while (i < n)
 	{
-		if (s[i] == c)
-			return ((char *)(&s[i]));
-		i--;
+		sbis[i] = '1';
+		i++;
 	}
-	return ((char *)(&s[i]));
+	return (sbis);
 }
-/*
-int	main(void)
+
+void *calloc(size_t nmemb, size_t size)
 {
-	char s[25] = "salut l'equipe";
-	printf("%s", ft_strrchr(s, 'e'));
-}*/
+    unsigned char *ptr;
+
+    ptr = malloc(nmemb * size);
+    return (ft_bzero(ptr, nmemb));
+}
+#include <stdio.h>
+int main(void)
+{
+    printf("%s", calloc(100, 10));
+}
