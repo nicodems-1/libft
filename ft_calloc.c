@@ -6,7 +6,7 @@
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 17:04:26 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/12 17:33:53 by niverdie         ###   ########.fr       */
+/*   Updated: 2025/11/12 17:36:29 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,9 @@ void *calloc(size_t nmemb, size_t size)
     ptr = malloc(nmemb * size);
     return (ft_bzero(ptr, nmemb));
 }
+/*
 #include <stdio.h>
 int main(void)
 {
     printf("%s", calloc(100, 10));
-}
+}*/
