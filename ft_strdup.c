@@ -1,44 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/12 17:04:26 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/12 17:36:29 by niverdie         ###   ########.fr       */
+/*   Created: 2025/11/12 17:37:18 by niverdie          #+#    #+#             */
+/*   Updated: 2025/11/12 17:59:00 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
 
-void	*ft_bzero(void *s, size_t n)
+size_t	ft_strlen(const char *s)
 {
-	size_t			i;
-	unsigned char	*sbis;
+	size_t	i;
 
-	sbis = (unsigned char *)s;
 	i = 0;
-	while (i < n)
+	while (s[i])
+		i++;
+	return (i);
+}
+
+char	*strdup(const char *s)
+{
+	int		len;
+	int		i;
+	char	*str;
+
+	i = 0;
+	len = ft_strlen(s);
+	str = malloc((sizeof(char) * len) + 1);
+	while (i <= len)
 	{
-		sbis[i] = '1';
+		str[i] = s[i];
 		i++;
 	}
-	return (sbis);
-}
-
-void	*calloc(size_t nmemb, size_t size)
-{
-	unsigned char	*ptr;
-
-	ptr = malloc(nmemb * size);
-	return (ft_bzero(ptr, nmemb));
+	str[i] = 0;
+	return (str);
 }
 /*
-#include <stdio.h>
-
-int	main(void)
+int	main(int ac, char **av)
 {
-    printf("%s", calloc(100, 10));
+    printf("%s", strdup(av[1]));
 }*/
