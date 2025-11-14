@@ -6,7 +6,7 @@
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 14:19:12 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/14 11:44:59 by niverdie         ###   ########.fr       */
+/*   Updated: 2025/11/14 11:53:45 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ char	**alloc_tab(int count, char const *s, char c, char **tab)
 		i += len;
 		loc++;
 	}
+    tab[loc] = 0;
 	return (tab);
 }
 
@@ -67,7 +68,9 @@ char	**ft_split(char const *s, char c)
 {
 	int		count;
 	char	**tab;
-
+    
+    if (!s)
+        return (0);
 	count = count_words(s, c);
 	return (alloc_tab(count, s, c, tab));
 }
