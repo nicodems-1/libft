@@ -6,13 +6,15 @@
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 11:55:25 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/10 12:03:40 by niverdie         ###   ########.fr       */
+/*   Updated: 2025/11/14 14:07:16 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalpha(int c)
 {
-	if (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z')
+	if (c >= 'a' && c <= 'z')
+		return (1);
+	if (c >= 'A' && c <= 'Z')
 		return (1);
 	return (0);
 }

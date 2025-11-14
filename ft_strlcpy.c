@@ -6,11 +6,12 @@
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 19:03:24 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/14 11:45:45 by niverdie         ###   ########.fr       */
+/*   Updated: 2025/11/14 14:15:39 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include "libft.h"
 
 //#include <stdio.h>
 

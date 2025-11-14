@@ -6,7 +6,7 @@
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 15:33:04 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/11 17:53:19 by niverdie         ###   ########.fr       */
+/*   Updated: 2025/11/14 14:16:20 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	void	*null;
-	int		i1;
-	int		i2;
+	void			*null;
+	unsigned int	i1;
+	unsigned int	i2;
 
 	null = 0;
 	i1 = 0;

@@ -6,13 +6,13 @@
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 09:42:21 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/13 14:14:06 by niverdie         ###   ########.fr       */
+/*   Updated: 2025/11/14 14:15:21 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <bsd/string.h>
-#include <stdio.h>
 #include <unistd.h>
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {

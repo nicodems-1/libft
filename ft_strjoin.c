@@ -6,11 +6,12 @@
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 14:02:50 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/13 14:18:17 by niverdie         ###   ########.fr       */
+/*   Updated: 2025/11/14 14:14:55 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

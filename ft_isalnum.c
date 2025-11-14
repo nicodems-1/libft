@@ -6,13 +6,15 @@
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 12:05:31 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/10 14:23:03 by niverdie         ###   ########.fr       */
+/*   Updated: 2025/11/14 14:06:23 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalnum(int c)
 {
-	if (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z')
+	if ((c >= 'a') && (c <= 'z'))
+		return (1);
+	if ((c >= 'A') && (c <= 'Z'))
 		return (1);
 	if (c >= '0' && c <= '9')
 		return (1);

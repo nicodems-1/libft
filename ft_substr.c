@@ -6,7 +6,7 @@
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 18:10:00 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/13 14:12:31 by niverdie         ###   ########.fr       */
+/*   Updated: 2025/11/14 14:16:43 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*sub;
-	int		i;
+	char			*sub;
+	unsigned int	i;
 
 	sub = NULL;
 	i = 0;

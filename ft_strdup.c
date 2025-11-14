@@ -6,12 +6,13 @@
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 17:37:18 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/13 15:56:55 by niverdie         ###   ########.fr       */
+/*   Updated: 2025/11/14 14:14:21 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
+#include "libft.h"
 
 char	*ft_strdup(const char *s)
 {

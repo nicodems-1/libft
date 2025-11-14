@@ -6,7 +6,7 @@
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 10:38:46 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/13 14:12:46 by niverdie         ###   ########.fr       */
+/*   Updated: 2025/11/14 14:13:43 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ char	*ft_strchr(const char *s, int c)
 	while (s[i])
 	{
 		if (s[i] == c)
-			return ((unsigned char *)(&s[i]));
+			return ((char *)(&s[i]));
 		i++;
 	}
-	return ((unsigned char *)(&s[i]));
+	return ((char *)(&s[i]));
 }
 
 // int	main(void)
