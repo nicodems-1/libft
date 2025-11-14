@@ -1,41 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/12 18:10:00 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/13 14:12:31 by niverdie         ###   ########.fr       */
+/*   Created: 2025/11/13 14:02:50 by niverdie          #+#    #+#             */
+/*   Updated: 2025/11/13 14:18:17 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include <unistd.h>
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*sub;
-	int		i;
+	int		final_len;
+	char	*final_string;
 
-	sub = NULL;
-	i = 0;
-	sub = malloc(sizeof(char) * (len + 1));
-	if (!sub)
+	final_len = ft_strlen(s1) + ft_strlen(s2);
+	final_string = ft_calloc(sizeof(char), (final_len + 1));
+	if (!final_string)
 		return (NULL);
-	while (len != i && s[start])
-	{
-		sub[i] = s[start];
-		start++;
-		i++;
-	}
-	return (sub);
+	ft_strlcpy(final_string, s1, ft_strlen(s1));
+	ft_strlcpy(final_string + ft_strlen(s1), s2, ft_strlen(s2));
+	final_string[final_len] = '\0';
+	return (final_string);
 }
-
-// #include <string.h>
-// #include <stdio.h>
 
 // int main(int ac, char **av)
 // {
-//     printf("%s", ft_substr(av[1], atoi(av[2]), atoi(av[3])));
+//     printf("%s", ft_strjoin(av[1], av[2]));
 // }

@@ -6,7 +6,7 @@
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 10:38:46 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/11 12:25:00 by niverdie         ###   ########.fr       */
+/*   Updated: 2025/11/13 14:12:46 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ char	*ft_strchr(const char *s, int c)
 	return ((unsigned char *)(&s[i]));
 }
 
-int	main(void)
-{
-	char	s[25];
+// int	main(void)
+// {
+// 	char	s[25];
 
-	s[25] = "salut l'equipe";
-	printf("%s", ft_strchr(s, 'l'));
-	printf("%s", strchr(s, 'l'));
-}
+// 	s[25] = "salut l'equipe";
+// 	printf("%s", ft_strchr(s, 'l'));
+// 	printf("%s", strchr(s, 'l'));
+// }

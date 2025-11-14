@@ -6,26 +6,13 @@
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 09:42:21 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/11 10:23:01 by niverdie         ###   ########.fr       */
+/*   Updated: 2025/11/13 14:14:06 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <bsd/string.h>
 #include <stdio.h>
 #include <unistd.h>
-
-size_t	ft_strlen(const char *s);
-size_t	ft_strlcat(char *dst, const char *src, size_t size);
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {

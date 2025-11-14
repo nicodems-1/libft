@@ -6,13 +6,11 @@
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 11:37:12 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/11 11:49:47 by niverdie         ###   ########.fr       */
+/*   Updated: 2025/11/13 14:14:27 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-
-int	ft_strncmp(const char *s1, const char *s2, size_t n);
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
