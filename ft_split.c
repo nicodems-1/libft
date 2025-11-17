@@ -6,13 +6,9 @@
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 14:19:12 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/17 16:35:04 by niverdie         ###   ########.fr       */
+/*   Updated: 2025/11/17 22:49:57 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-// "abc | efg | hi" "|"
-
-// abc, efg, hi
 
 #include "libft.h"
 #include <stdlib.h>
