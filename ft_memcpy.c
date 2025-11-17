@@ -6,7 +6,7 @@
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 14:50:52 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/10 17:21:20 by niverdie         ###   ########.fr       */
+/*   Updated: 2025/11/17 14:44:22 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	size_t	i;
 
 	i = 0;
-	while (i < n && ((unsigned char *)src)[i])
+
+	if (!dest && !src)
+		return(NULL);
+	while (i < n)
 	{
 		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
 		i++;

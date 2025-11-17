@@ -6,7 +6,7 @@
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 14:19:12 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/14 14:12:29 by niverdie         ###   ########.fr       */
+/*   Updated: 2025/11/17 14:32:12 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,18 @@ int	count_words(char const *s, char c)
 	return (count);
 }
 
+void	ft_free(char **tab, char const *s, char c)
+{
+	int	i;
+
+	i = 0;
+	while (i != count_words(s, c))
+	{
+		free (tab[i]);
+		i++;
+	}
+}
+
 char	**alloc_tab(int count, char const *s, char c, char **tab)
 {
 	int	i;
@@ -57,6 +69,8 @@ char	**alloc_tab(int count, char const *s, char c, char **tab)
 				break ;
 		}
 		tab[loc] = malloc(sizeof(char) * len);
+		if (!tab)
+			ft_free(tab, s, c);
 		tab[loc] = ft_substr(s, i, len);
 		i += len;
 		loc++;
@@ -73,7 +87,7 @@ char	**ft_split(char const *s, char c)
 	tab = NULL;
 	if (s == NULL)
 	{
-		return (0);
+		return NULL;
 	}
 	count = count_words(s, c);
 	return (alloc_tab(count, s, c, tab));

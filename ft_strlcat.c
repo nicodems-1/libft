@@ -6,7 +6,7 @@
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 09:42:21 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/14 14:15:21 by niverdie         ###   ########.fr       */
+/*   Updated: 2025/11/14 17:40:18 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,16 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	else
 		return (l1 + l2);
 }
-/*
-int	main(void)
-{
-	char	dest[10] = "salut";
-	char	dest2[10] = "salut";
-	char	src[5] = "toi";
-	char	src2[5] = "toi";
 
-	printf("ft : %zu\n", ft_strlcat(dest, src, 0));
-	printf("ft : %s\n", dest);
-	printf("og : %zu\n", strlcat(dest2, src2, 0));
-	printf("og : %s\n", dest2);
-}*/
+// int	main(void)
+// {
+// 	char	dest[10] = "salut";
+// 	char	dest2[10] = "salut";
+// 	char	src[5] = "toi";
+// 	char	src2[5] = "toi";
+
+// 	printf("ft : %zu\n", ft_strlcat(dest, src, 0));
+// 	printf("ft : %s\n", dest);
+// 	printf("og : %zu\n", strlcat(dest2, src2, 0));
+// 	printf("og : %s\n", dest2);
+// }

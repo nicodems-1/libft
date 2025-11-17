@@ -6,13 +6,11 @@
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 10:38:46 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/14 14:13:43 by niverdie         ###   ########.fr       */
+/*   Updated: 2025/11/17 09:49:25 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-
-char	*ft_strchr(const char *s, int c);
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -25,7 +23,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)(&s[i]));
 		i++;
 	}
-	return ((char *)(&s[i]));
+	return (NULL);
 }
 
 // int	main(void)

@@ -6,7 +6,7 @@
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 12:07:33 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/14 13:53:32 by niverdie         ###   ########.fr       */
+/*   Updated: 2025/11/17 14:06:32 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ char	*ft_strrchr(const char *s, int c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
-
+char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_itoa(int n);
 #endif
