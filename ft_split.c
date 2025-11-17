@@ -6,7 +6,7 @@
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 14:19:12 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/17 14:32:12 by niverdie         ###   ########.fr       */
+/*   Updated: 2025/11/17 16:35:04 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-int	count_words(char const *s, char c)
+static int	count_words(char const *s, char c)
 {
 	int	i;
 	int	count;
@@ -36,7 +36,7 @@ int	count_words(char const *s, char c)
 	return (count);
 }
 
-void	ft_free(char **tab, char const *s, char c)
+static void	ft_free(char **tab, char const *s, char c)
 {
 	int	i;
 
@@ -48,7 +48,7 @@ void	ft_free(char **tab, char const *s, char c)
 	}
 }
 
-char	**alloc_tab(int count, char const *s, char c, char **tab)
+static char	**alloc_tab(int count, char const *s, char c, char **tab)
 {
 	int	i;
 	int	len;
@@ -68,8 +68,7 @@ char	**alloc_tab(int count, char const *s, char c, char **tab)
 			if (s[i + len] == 0)
 				break ;
 		}
-		tab[loc] = malloc(sizeof(char) * len);
-		if (!tab)
+		if (!tab[loc])
 			ft_free(tab, s, c);
 		tab[loc] = ft_substr(s, i, len);
 		i += len;
@@ -92,7 +91,7 @@ char	**ft_split(char const *s, char c)
 	count = count_words(s, c);
 	return (alloc_tab(count, s, c, tab));
 }
-
+// #include <stdio.h>
 // int	main(int ac, char **av)
 // {
 // 	char c = ' ';
@@ -103,7 +102,7 @@ char	**ft_split(char const *s, char c)
 
 // 	i = 0;
 // 	if (ac != 2)
-// 		return (NULL);
+// 		return (0);
 // 	count = count_words(av[1], c) + 1;
 // 	if (ac == 2)
 // 		tab = ft_split(av[1], c);
