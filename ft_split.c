@@ -43,7 +43,7 @@ static void	ft_free(char **tab, char const *s, char c)
 	i = 0;
 	while (i != count_words(s, c))
 	{
-		free (tab[i]);
+		free(tab[i]);
 		i++;
 	}
 }
@@ -86,7 +86,7 @@ char	**ft_split(char const *s, char c)
 	tab = NULL;
 	if (s == NULL)
 	{
-		return NULL;
+		return (NULL);
 	}
 	count = count_words(s, c);
 	return (alloc_tab(count, s, c, tab));

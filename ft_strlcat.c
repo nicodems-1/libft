@@ -10,25 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <bsd/string.h>
-#include <unistd.h>
 #include "libft.h"
+#include <bsd/string.h>
 #include <stdio.h>
+#include <unistd.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	j;
-	
+
 	i = 0;
 	j = 0;
-	if(size == 0)
-		return(ft_strlen(src));
+	if (size == 0)
+		return (ft_strlen(src));
 	while (dst[i] != 0 && i < size)
 		i++;
 	if (i < size)
 	{
-		while (src[j] && i+j < size - 1)
+		while (src[j] && i + j < size - 1)
 		{
 			dst[i + j] = src[j];
 			j++;
@@ -43,7 +43,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 // 	char	dest2[2] = "a";
 // 	char	src[4] = "toi\0";
 // 	char	src2[4] = "toi\0";
-	
+
 // 	printf("%s %zu \n", dest, ft_strlen(dest));
 // 	printf("ft : %zu\n", ft_strlcat(dest, src, 10));
 // 	printf("ft : %s\n", dest);
