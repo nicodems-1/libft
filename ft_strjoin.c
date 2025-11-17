@@ -6,29 +6,46 @@
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 14:02:50 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/14 14:14:55 by niverdie         ###   ########.fr       */
+/*   Updated: 2025/11/17 22:32:12 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		final_len;
+	int		i;
+	int		j;
 	char	*final_string;
 
-	final_len = ft_strlen(s1) + ft_strlen(s2);
-	final_string = ft_calloc(sizeof(char), (final_len + 1));
+	i = 0;
+	j = 0;
+	final_string = NULL;
+	final_string = malloc(sizeof(char*)*(ft_strlen(s1) + ft_strlen(s2)) + 1);
 	if (!final_string)
 		return (NULL);
-	ft_strlcpy(final_string, s1, ft_strlen(s1));
-	ft_strlcpy(final_string + ft_strlen(s1), s2, ft_strlen(s2));
-	final_string[final_len] = '\0';
+	while (s1[i])
+	{
+		final_string[i] = s1[i];
+		i++;
+	}
+	while (s2[j])
+	{
+		final_string[i + j] = s2[j];
+		j++;
+	}
+	final_string[i+j] = '\0';
 	return (final_string);
 }
 
-// int main(int ac, char **av)
+// int	main(int ac, char **av)
 // {
-//     printf("%s", ft_strjoin(av[1], av[2]));
+// 	if (ac == 3)
+// 	{
+// 		printf("success\n");
+// 		printf("%s", ft_strjoin(av[1], av[2]));
+// 	}
 // }

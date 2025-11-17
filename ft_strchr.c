@@ -6,31 +6,37 @@
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 10:38:46 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/17 09:49:25 by niverdie         ###   ########.fr       */
+/*   Updated: 2025/11/17 21:53:49 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
 	int	i;
+	int	len;
 
+	len = ft_strlen(s);
 	i = 0;
+	if(!s)
+		return(NULL);
+	if ((unsigned char)c == 0)
+		return ((char*)(&s[len]));
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] == (unsigned char)c)
 			return ((char *)(&s[i]));
 		i++;
 	}
 	return (NULL);
 }
 
+// #include <string.h>
 // int	main(void)
 // {
-// 	char	s[25];
-
-// 	s[25] = "salut l'equipe";
-// 	printf("%s", ft_strchr(s, 'l'));
-// 	printf("%s", strchr(s, 'l'));
+// 	char	s[10] = "salut";
+// 	printf("%s\n", ft_strchr(s, ' '));
+// 	printf("%s", strchr(s, ' '));
 // }
