@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/18 13:44:09 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/18 14:31:50 by niverdie         ###   ########.fr       */
+/*   Created: 2025/11/18 14:00:33 by niverdie          #+#    #+#             */
+/*   Updated: 2025/11/18 14:21:58 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+#include <unistd.h>
+
+void	ft_putstr_fd(char *s, int fd)
 {
-	unsigned int	i;
+	int	i;
 
 	i = 0;
-	if (!s || !f)
+	if (!s)
 		return ;
 	while (s[i])
 	{
-		f(i, &s[i]);
+		write(fd, &s[i], 1);
 		i++;
 	}
 }
+
+// int main(int argc, char const *argv[])
+// {
+//     ft_pustr_fd(argv[1], 1);
+//     return (0);
+// }
