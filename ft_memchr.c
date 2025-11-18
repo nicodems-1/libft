@@ -6,7 +6,7 @@
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 10:38:46 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/17 22:41:01 by niverdie         ###   ########.fr       */
+/*   Updated: 2025/11/18 13:39:13 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	sbis = (unsigned char *)s;
 	i = 0;
-
 	while (i < n)
 	{
 		if (sbis[i] == (unsigned char)c)
