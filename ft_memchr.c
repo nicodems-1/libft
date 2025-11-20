@@ -6,7 +6,7 @@
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 10:38:46 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/18 13:39:13 by niverdie         ###   ########.fr       */
+/*   Updated: 2025/11/20 16:40:11 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return ((void *) NULL);
 }
+
 /*
 #include <stdio.h>
 #include <string.h>

@@ -21,12 +21,12 @@ char	*ft_strdup(const char *s)
 	char	*str;
 
 	if (s == NULL)
-		return(NULL);
+		return (NULL);
 	i = 0;
 	len = ft_strlen(s);
 	str = malloc((sizeof(char) * len) + 1);
-	if(!str)
-		return(NULL);
+	if (!str)
+		return (NULL);
 	while (i <= len)
 	{
 		str[i] = s[i];
