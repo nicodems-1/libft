@@ -6,7 +6,7 @@
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 14:19:12 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/17 22:49:57 by niverdie         ###   ########.fr       */
+/*   Updated: 2025/11/20 16:16:49 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ static int	count_words(char const *s, char c)
 
 	i = 0;
 	count = 0;
+	if (!s)
+		return (0);
 	if (s[0] != c)
 		count++;
 	while (s[i])
@@ -32,28 +34,29 @@ static int	count_words(char const *s, char c)
 	return (count);
 }
 
-static void	ft_free(char **tab, char const *s, char c)
+char	**free_tab(int loc, char **tab)
 {
-	int	i;
-
-	i = 0;
-	while (i != count_words(s, c))
+	while (loc > 0)
 	{
-		free(tab[i]);
-		i++;
+		if (tab[loc])
+			free(tab[loc]);
+		loc--;
 	}
+	free(tab);
+	return (NULL);
 }
 
-static char	**alloc_tab(int count, char const *s, char c, char **tab)
+static char	**alloc_tab(int i, char const *s, char c, char **tab)
 {
-	int	i;
 	int	len;
 	int	loc;
 
-	loc = 0;
+	loc = -1;
 	i = 0;
-	tab = malloc((count + 1) * sizeof(char *));
-	while (loc < count)
+	tab = ft_calloc((count_words(s, c) + 1), sizeof(char *));
+	if (!tab)
+		return (NULL);
+	while (++loc < count_words(s, c))
 	{
 		len = 0;
 		while (s[i] == c)
@@ -64,13 +67,11 @@ static char	**alloc_tab(int count, char const *s, char c, char **tab)
 			if (s[i + len] == 0)
 				break ;
 		}
-		if (!tab[loc])
-			ft_free(tab, s, c);
 		tab[loc] = ft_substr(s, i, len);
+		if (!tab[loc])
+			return (free_tab(loc, tab));
 		i += len;
-		loc++;
 	}
-	tab[loc] = 0;
 	return (tab);
 }
 
@@ -81,16 +82,21 @@ char	**ft_split(char const *s, char c)
 
 	tab = NULL;
 	if (s == NULL)
-	{
 		return (NULL);
+	if (s[0] == '\0')
+	{
+		tab = ft_calloc(1, sizeof(char *));
+		if (!tab)
+			return (NULL);
+		return (tab);
 	}
 	count = count_words(s, c);
-	return (alloc_tab(count, s, c, tab));
+	return (alloc_tab(0, s, c, tab));
 }
 // #include <stdio.h>
 // int	main(int ac, char **av)
 // {
-// 	char c = ' ';
+// 	char c = 'z';
 // 	char **tab;
 // 	int count;
 // 	int i;
@@ -101,8 +107,12 @@ char	**ft_split(char const *s, char c)
 // 		return (0);
 // 	count = count_words(av[1], c) + 1;
 // 	if (ac == 2)
+// 	{
 // 		tab = ft_split(av[1], c);
-// 	while (i < count)
+// 		if (!tab)
+// 			return (0);
+// 	}
+// 	while (i < 3)
 // 	{
 // 		printf("%s\n", tab[i]);
 // 		i++;

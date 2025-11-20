@@ -6,7 +6,7 @@
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 14:43:09 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/18 15:31:28 by niverdie         ###   ########.fr       */
+/*   Updated: 2025/11/19 14:30:43 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void	ft_putnbr_fd(int n, int fd)
 	c = n % 10 + 48;
 	write(fd, &c, 1);
 }
-
 
 // int main(int ac, char **av)
 // {

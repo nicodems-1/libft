@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/18 14:33:32 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/19 14:30:31 by niverdie         ###   ########.fr       */
+/*   Created: 2025/11/18 18:15:43 by niverdie          #+#    #+#             */
+/*   Updated: 2025/11/19 17:28:40 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
-void	ft_putendl_fd(char *s, int fd)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+	new->next = *lst;
+	*lst = new;
 }
+
+// int main()
+// {
+//     t_list  *lst;
+//     t_list  *new;
+
+//     int nb;
+//     new = ft_lstnew(&nb);
+//     ft_lstadd_front(&lst, new);
+// }
