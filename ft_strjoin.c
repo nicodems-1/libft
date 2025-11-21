@@ -6,7 +6,7 @@
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 14:02:50 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/17 22:32:12 by niverdie         ###   ########.fr       */
+/*   Updated: 2025/11/20 16:51:41 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	i = 0;
 	j = 0;
 	final_string = NULL;
-	final_string = malloc(sizeof(char *) * (ft_strlen(s1) + ft_strlen(s2)) + 1);
+	final_string = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!final_string)
 		return (NULL);
 	while (s1[i])

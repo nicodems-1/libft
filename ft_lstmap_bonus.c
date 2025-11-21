@@ -6,48 +6,37 @@
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 13:32:48 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/20 16:39:50 by niverdie         ###   ########.fr       */
+/*   Updated: 2025/11/21 15:24:09 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <unistd.h>
 
-//Allouer un noeud
-//Appliquer une fonction sur le nouveau noeud cree qui contient og lst
-//Reccursivement permet d'automatiser le process
-
-void	set_null(t_list *head, t_list *node, t_list *last)
-{
-	head = NULL;
-	node = NULL;
-	last = NULL;
-}
-
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*head;
+	t_list	*new_lst;
 	t_list	*node;
-	t_list	*last;
+	void	*content;
 
-	set_null(head, node, last);
+	new_lst = NULL;
 	while (lst)
 	{
-		node = ft_calloc(1, sizeof(t_list));
+		content = f(lst->content);
+		if (!content)
+		{
+			ft_lstclear(&new_lst, del);
+			return (NULL);
+		}
+		node = ft_lstnew(content);
 		if (!node)
-			ft_lstclear(&node, del);
-		node->content = f(lst->content);
-		if (head == NULL)
 		{
-			head = node;
-			last = node;
+			ft_lstclear(&new_lst, del);
+			del(content);
+			return (NULL);
 		}
-		else
-		{
-			last->next = node;
-			last = node;
-		}
+		ft_lstadd_back(&new_lst, node);
 		lst = lst->next;
 	}
-	return (head);
+	return (new_lst);
 }
