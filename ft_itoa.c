@@ -6,35 +6,13 @@
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 12:09:19 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/17 18:35:24 by niverdie         ###   ########.fr       */
+/*   Updated: 2025/11/21 15:31:42 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 #include <stdlib.h>
-
-// static void	reverse(char *string)
-// {
-// 	int		i;
-// 	char	temp;
-// 	int		len;
-
-// 	len = ft_strlen(string);
-// 	i = 0;
-// 	if (string[0] == '-')
-// 	{
-// 		i++;
-// 		len++;
-// 	}
-// 	while (i != len / 2)
-// 	{
-// 		temp = string[i];
-// 		string[i] = string[len - 1 - i];
-// 		string[len - 1 - i] = temp;
-// 		i++;
-// 	}
-// }
 
 static int	measure(int n)
 {

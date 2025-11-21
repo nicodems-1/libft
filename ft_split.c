@@ -6,7 +6,7 @@
 /*   By: niverdie <niverdie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 14:19:12 by niverdie          #+#    #+#             */
-/*   Updated: 2025/11/21 14:01:22 by niverdie         ###   ########.fr       */
+/*   Updated: 2025/11/21 15:30:31 by niverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int	count_words(char const *s, char c)
 	return (count);
 }
 
-char	**free_tab(int loc, char **tab)
+static char	**free_tab(int loc, char **tab)
 {
 	while (loc >= 0)
 	{
